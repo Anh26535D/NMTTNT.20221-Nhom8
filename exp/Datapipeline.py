@@ -8,7 +8,7 @@ from OutlierHandling import OutlierHandling
 
 def Datapipeline():
 
-    cat_cols = ['Payment', 'City_Tier', 'Gender', 'account_segment', 'Marital_Status', 'Login_device']
+    cat_cols = ['Payment','City_Tier', 'Gender', 'account_segment', 'Marital_Status', 'Login_device']
     cat_transformer = Pipeline(
         steps=[
             ("imputer", SimpleImputer(strategy="most_frequent")),

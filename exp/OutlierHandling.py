@@ -19,11 +19,6 @@ class OutlierHandling(BaseEstimator, TransformerMixin):
             IQR = q3 - q1
             self.lwr_bound[col] = q1-(1.5*IQR)
             self.upr_bound[col] = q3+(1.5*IQR)
-
-            # self.q2[col] = np.percentile(X[col], 50)
-            # for i in X[col]:
-            #     if(i < self.lwr_bound[col] or i > self.upr_bound[col]):
-            #         self.outliers[col].append(i)
         return self
 
     def transform(self, X, y=None):
